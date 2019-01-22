@@ -1,0 +1,21 @@
+<launch>
+
+    <!-- Instantiate your teleoperation node here -->
+  <!-- joy node -->
+  <node respawn="true" pkg="joy"
+        type="joy_node" name="collision_joy" >
+    <param name="dev" type="string" value="/dev/input/js0" />
+    <param name="deadzone" value="0.12" />
+    <param name="autorepeat_rate" value="10" />
+  </node>
+
+  <node pkg="collision_avoidance_sim" type="collision_avoidance_sim" name="collision_avoid" output="screen">
+      launch-prefix="xterm -e gdb --args"
+      <param name="radius" value="1.0" />
+
+      <remap from="~scans" to="/vrep/hokuyoSensor"/>
+
+      <remap from="~output_vel" to="/vrep/twistCommand"/>
+  </node>
+
+</launch>
