@@ -22,6 +22,10 @@ Here is some terminal need to open at the same time:
 Since we have written the node of laserscan_to_pc2 to the ca_turtle.launch, you can neglect step(3).
 
 ################################################
+The hw3 is used to wander if no collision and turn away when detecting a face and collision.
+
+################################################
+
 
 
 
